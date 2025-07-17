@@ -1,20 +1,23 @@
 # 간단한 커뮤니티 앱 MVP 개발
-![MainScreen](./assets/images/MainScreen.png)
-주요 기능 : 회원가입/로그인, 글(목록/상세/작성), 이미지 첨부, 댓글
-기술 스택 : React Native(Expo), Firebase
-제작 : 박형준
+![MainScreen](./assets/images/MainScreen.png) &nbsp;
+주요 기능 : 회원가입/로그인, 글(목록/상세/작성), 이미지 첨부, 댓글 &nbsp;
+기술 스택 : React Native(Expo), Firebase &nbsp;
+제작 : 박형준 
 
 # 컴포넌트 경로
-메인 : app/index.js
-로그인 : app/Auth/Login.js
-회원가입 : app/Auth/Register.js
-닉네임 설정 : app/Auth/SetNickname.js
-글목록 : app/Community/PostList.js
-글상세 : app/Community/PostDetail.js
-글작성 : app/Community/WritePost.js
+메인 : app/index.js &nbsp;
+로그인 : app/Auth/Login.js &nbsp;
+회원가입 : app/Auth/Register.js &nbsp;
+닉네임 설정 : app/Auth/SetNickname.js &nbsp;
+글목록 : app/Community/PostList.js &nbsp;
+글상세 : app/Community/PostDetail.js &nbsp;
+글작성 : app/Community/WritePost.js &nbsp;
 
 ※ firebaseConfig.js 파일의 경우 GitHub 미업로드
 
+_____
+&nbsp;
+&nbsp;
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
