@@ -19,7 +19,7 @@ const PostList = () => {
 
     let userMap = {};
 
-    // 1. 유저 목록 먼저 불러오기
+    // 유저 목록 호출
     onValue(usersRef, (userSnap) => {
       const users = userSnap.val();
       if (users) {
@@ -28,7 +28,7 @@ const PostList = () => {
         });
       }
 
-      // 2. 유저 정보를 다 받아온 다음에, 글 목록 불러오기
+      // 게시글 호출
       onValue(postsRef, (postSnap) => {
         const data = postSnap.val();
         if (data) {
@@ -49,11 +49,10 @@ const PostList = () => {
     });
 
     return () => {
-      // cleanup 생략 가능
     };
   }, []);
 
-    // 🔹 로그아웃 처리 함수
+    // 로그아웃
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -64,6 +63,7 @@ const PostList = () => {
     }
   };
 
+  //FlatList 행
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={{

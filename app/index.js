@@ -15,12 +15,6 @@ const index = () => {
                     <Text style={styles.text}>회원가입</Text>
                 </TouchableOpacity>
             </View>
-            {/* <TouchableOpacity style={styles.button} onPress={() => {router.push('./Community/PostList')}}>
-                <Text>글목록</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => {router.push('./Community/WritePost')}}>
-                <Text style={styles.text}>글쓰기</Text>
-            </TouchableOpacity> */}
         </View>
     );
 };

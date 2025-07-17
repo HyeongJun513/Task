@@ -4,10 +4,11 @@ import { Alert, TouchableOpacity, Text, TextInput, View, StyleSheet } from 'reac
 import { auth } from '../../firebaseConfig';
 import { router } from 'expo-router';
 
-const Register = ({ navigation }) => {
+const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  //회원가입
   const handleRegister = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);

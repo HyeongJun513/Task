@@ -10,6 +10,7 @@ const SetNickname = () => {
   const db = getDatabase();
   const router = useRouter();
 
+  // 설정 닉네임 저장
   const handleSaveNickname = async () => {
     const user = auth.currentUser;
     if (!user) {
@@ -24,7 +25,7 @@ const SetNickname = () => {
       });
 
       Alert.alert('성공', '닉네임이 설정되었습니다!');
-      router.replace('../Community/PostList'); // 홈으로 이동
+      router.replace('/Community/PostList');
     } catch (error) {
       Alert.alert('오류', error.message);
     }

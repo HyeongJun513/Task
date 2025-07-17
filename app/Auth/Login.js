@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { Alert, TouchableOpacity, Text, TextInput, View, StyleSheet } from 'react-native';
 import { auth } from '../../firebaseConfig';
 
-const Login = ({ navigation }) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // 로그인
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);

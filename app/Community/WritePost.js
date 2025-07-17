@@ -5,14 +5,14 @@ import * as ImagePicker from 'expo-image-picker';
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { getDatabase, ref as dbRef, push, set } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
-import { useRouter } from 'expo-router';
+import { router } from 'expo-router';
 
 const WritePost = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
-  const router = useRouter();
 
+  // 이미지 권한요청 및 선택
   const pickImage = async () => {
     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!permission.granted) {
@@ -30,6 +30,7 @@ const WritePost = () => {
     }
   };
 
+  //게시글 작성
   const handleSubmit = async () => {
     const auth = getAuth();
     const user = auth.currentUser;
@@ -49,7 +50,7 @@ const WritePost = () => {
     try {
       let imageUrl = '';
       if (image) {
-        const imageRef = storageRef(storage, `communityApp/posts/${Date.now()}.jpg`);
+        const imageRef = storageRef(storage, `communityApp/posts/${Date.now()}.jpg`); //이미지명 날짜 스탬프 지정
         const response = await fetch(image);
         const blob = await response.blob();
         await uploadBytes(imageRef, blob);
@@ -64,12 +65,12 @@ const WritePost = () => {
         timestamp: Date.now(),
         author: {
           uid: user.uid,
-          email: user.email, // 닉네임은 따로 불러올 수도 있음
+          email: user.email,
         },
       });
 
-      Alert.alert('성공', '게시글이 등록되었습니다!');
-      router.replace('/Community/PostList'); // 홈화면 등으로 이동
+      Alert.alert('성공', '게시글이 등록되었습니다.');
+      router.replace('/Community/PostList');
     } catch (error) {
       Alert.alert('오류', error.message);
     }
@@ -92,7 +93,7 @@ const WritePost = () => {
           style={[styles.input, {height:'30%'}]}
         />
         <View style={{alignItems:'center', justifyContent:'center'}}>
-          <Text style={{fontWeight:'bold', fontSize:15}}> 첨부된 이미지 </Text>
+          <Text style={{fontWeight:'bold', fontSize:15, marginTop:20}}>첨부된 이미지</Text>
           {image ? (
             <Image
               source={{ uri: image }}
