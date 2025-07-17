@@ -1,5 +1,5 @@
 # 간단한 커뮤니티 앱 MVP 개발
-![MainScreen](./mdImages/0Main.png)
+![MainScreen](./assets/images/MainScreen.png)
 주요 기능 : 회원가입/로그인, 글(목록/상세/작성), 이미지 첨부, 댓글
 기술 스택 : React Native(Expo), Firebase
 제작 : 박형준
